@@ -1,0 +1,10 @@
+    
+    /**
+     * Get all {{relationName}} for the {{localTableName}}
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function {{relationName}}(): HasMany
+    {
+        return $this->hasMany({{referencedTableName}}::class, '{{referencedForeignKey}}', '{{localKey}}');
+    }

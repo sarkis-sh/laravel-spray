@@ -1,0 +1,12 @@
+
+    /**
+     * Validation rules for the '{{functionName}}' action.
+     *
+     * @return array
+     */
+    private function {{functionName}}Validator()
+    {
+        return [
+{{columns}}
+        ];
+    }

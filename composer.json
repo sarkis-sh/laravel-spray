@@ -1,0 +1,21 @@
+{
+    "name": "sarkis-sh/laravel-spray",
+    "description": "A Laravel code generation tool to accelerate project setup and streamline API development.",
+    "type": "tool",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4",
+        "doctrine/inflector": "^2.0",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/s-spray"
+    ],
+    "minimum-stability": "stable",
+    "version": "1.0.0"
+}

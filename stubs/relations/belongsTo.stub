@@ -1,0 +1,10 @@
+
+    /**
+     * Get the {{relationName}} that owns the {{localTableName}}
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function {{relationName}}(): BelongsTo
+    {
+        return $this->belongsTo({{referencedTableName}}::class, '{{localForeignKey}}', '{{referencedKey}}');
+    }

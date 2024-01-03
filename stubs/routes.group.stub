@@ -1,0 +1,7 @@
+
+Route::group([
+    'prefix' => '/{{pluralVar}}',
+    'controller' => {{className}}Controller::class,
+    // 'middleware' => ''
+], function () {
+});

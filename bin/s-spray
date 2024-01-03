@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * A PHP script for running the Spray application.
+ */
+
+use src\Exceptions\ErrorHandler;
+
+require_once __DIR__ . '/../../../autoload.php';
+
+
+$errorHandler = new ErrorHandler();
+
+set_error_handler([$errorHandler, 'handleError']);
+
+set_exception_handler([$errorHandler, 'handleException']);
+
+$currentFolder = getcwd();
+
+(new src\SprayApplication())->start($currentFolder);

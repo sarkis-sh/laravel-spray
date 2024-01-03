@@ -1,0 +1,7 @@
+<?php
+
+namespace {{serviceNamespace}};
+
+class {{className}}Service extends GenericService
+{
+}

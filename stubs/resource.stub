@@ -1,0 +1,19 @@
+<?php
+
+namespace {{resourceNamespace}};
+
+class {{className}}Resource extends GenericResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     */
+    public function toArray($request)
+    {
+        return [
+{{columns}}
+        ];
+    }
+}

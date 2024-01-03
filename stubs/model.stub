@@ -1,0 +1,14 @@
+<?php
+
+namespace {{modelNamespace}};
+
+class {{className}} extends GenericModel
+{
+    protected $table = '{{tableName}}';
+
+{{otherProperties}}
+
+    protected $fillable = [
+{{columns}}
+    ];
+}

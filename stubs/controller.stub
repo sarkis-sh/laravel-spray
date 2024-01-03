@@ -1,0 +1,16 @@
+<?php
+
+namespace {{controllerNamespace}};
+
+use {{requestPrefix}}\{{className}}Request;
+use {{resourcePrefix}}\{{className}}Resource;
+use {{servicePrefix}}\{{className}}Service;
+use {{modelPrefix}}\{{className}};
+
+class {{className}}Controller extends GenericController
+{
+    public function __construct(private {{className}}Service ${{singularVar}}Service)
+    {
+        parent::__construct(new {{className}}Request(), new {{className}}Resource([]), new {{className}}Service(new {{className}}()));
+    }
+}
