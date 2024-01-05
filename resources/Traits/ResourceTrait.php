@@ -10,18 +10,18 @@ use Illuminate\Pagination\Paginator;
 
 trait ResourceTrait
 {
-    protected function toResource($data, $resourceClass)
+    protected function toResource($data, $resourceObj)
     {
         if (isset($data)) {
             if ($data instanceof Collection) {
-                return $resourceClass::collection($data);
+                return $resourceObj::collection($data);
             }
             if ($data instanceof Model) {
-                return new $resourceClass($data);
+                return new $resourceObj($data);
             }
             if ($data instanceof SupportCollection) {
-                return collect($data)->map(function ($item) use ($resourceClass) {
-                    return new $resourceClass($item);
+                return collect($data)->map(function ($item) use ($resourceObj) {
+                    return new $resourceObj($item);
                 });
             }
             if ($data instanceof LengthAwarePaginator || $data instanceof Paginator) {
