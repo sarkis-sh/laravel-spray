@@ -8,11 +8,21 @@ use App\Http\Resources\GenericResource;
 
 class GenericController extends ApiController
 {
+    protected GenericRequest $request;
+
+    protected GenericResource $resource;
+
+    protected GenericService $service;
+
+
     public function __construct(
-        protected GenericRequest $request,
-        protected GenericResource $resource,
-        protected GenericService $service
+        GenericRequest $request,
+        GenericResource $resource,
+        GenericService $service
     ) {
+        $this->request = $request;
+        $this->resource = $resource;
+        $this->service = $service;
     }
 
     /**
@@ -23,8 +33,9 @@ class GenericController extends ApiController
     public function getAll()
     {
         $items = $this->service->getAll();
+
         return $this->successResponse(
-            $this->toResource($items, $this->resource::class),
+            $this->toResource($items, $this->resource),
             __('messages.dataFetchedSuccessfully')
         );
     }
@@ -40,7 +51,7 @@ class GenericController extends ApiController
         $model = $this->service->findById($modelId);
 
         return $this->successResponse(
-            $this->toResource($model, $this->resource::class),
+            $this->toResource($model, $this->resource),
             __('messages.dataFetchedSuccessfully')
         );
     }
@@ -53,10 +64,11 @@ class GenericController extends ApiController
     public function store()
     {
         $validatedData = request()->validate($this->request->rules());
+
         $model = $this->service->store($validatedData);
 
         return $this->successResponse(
-            $this->toResource($model, $this->resource::class),
+            $this->toResource($model, $this->resource),
             __('messages.dataAddedSuccessfully')
         );
     }
@@ -69,9 +81,11 @@ class GenericController extends ApiController
     public function bulkStore()
     {
         $validatedData = request()->validate($this->request->rules());
+
         $items = $this->service->bulkStore($validatedData);
+
         return $this->successResponse(
-            $this->toResource($items, $this->resource::class),
+            $this->toResource($items, $this->resource),
             __('messages.dataAddedSuccessfully')
         );
     }
@@ -85,10 +99,11 @@ class GenericController extends ApiController
     public function update($modelId)
     {
         $validatedData = request()->validate($this->request->rules());
+
         $model = $this->service->update($validatedData, $modelId);
 
         return $this->successResponse(
-            $this->toResource($model, $this->resource::class),
+            $this->toResource($model, $this->resource),
             __('messages.dataUpdatedSuccessfully')
         );
     }
@@ -117,6 +132,7 @@ class GenericController extends ApiController
     public function bulkDelete()
     {
         $validatedData = request()->validate($this->request->rules());
+        
         $this->service->bulkDelete($validatedData);
 
         return $this->successResponse(

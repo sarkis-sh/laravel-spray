@@ -9,8 +9,13 @@ use {{modelPrefix}}\{{className}};
 
 class {{className}}Controller extends GenericController
 {
-    public function __construct(private {{className}}Service ${{singularVar}}Service)
+    private {{className}}Service ${{singularVar}}Service;
+
+
+    public function __construct({{className}}Service ${{singularVar}}Service)
     {
+        $this->{{singularVar}}Service = ${{singularVar}}Service;
+        
         parent::__construct(new {{className}}Request(), new {{className}}Resource([]), new {{className}}Service(new {{className}}()));
     }
 }

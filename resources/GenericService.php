@@ -8,8 +8,12 @@ use Illuminate\Support\Facades\DB;
 
 class GenericService
 {
-    public function __construct(private GenericModel $model)
+    private GenericModel $model;
+
+
+    public function __construct(GenericModel $model)
     {
+        $this->model = $model;
     }
 
     /**
