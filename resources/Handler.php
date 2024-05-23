@@ -71,7 +71,7 @@ class Handler extends ExceptionHandler
                 $code = 404;
                 break;
             case $e instanceof AuthenticationException:
-                $msg = __('messages.unauthenticated');
+                $msg = __('auth.unauthenticated');
                 $code = 401;
                 break;
         }
