@@ -27,8 +27,8 @@ return [
     'unauthenticated'               => 'الرجاء تسجيل الدخول اولاً',
 
 
-    // Success messgaes
+    // Success messages
     'userSuccessfullyRegistered'    => 'تم التسجيل بنجاح',
-    'userSuccessfullyLogedIn'       => 'تم تسجيل الدخول بنجاح',
-    'userSuccessfullyLogedOut'      => 'تم تسجيل الخروج بنجاح',
+    'userSuccessfullyLoggedIn'       => 'تم تسجيل الدخول بنجاح',
+    'userSuccessfullyLoggedOut'      => 'تم تسجيل الخروج بنجاح',
 ];

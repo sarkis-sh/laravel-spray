@@ -27,8 +27,8 @@ return [
     'unauthenticated'               => 'PLease login first',
 
 
-    // Success messgaes
+    // Success messages
     'userSuccessfullyRegistered'    => 'Successfully registered',
-    'userSuccessfullyLogedIn'       => 'Loged in successfully',
-    'userSuccessfullyLogedOut'      => 'Loged out successfully',
+    'userSuccessfullyLoggedIn'       => 'Logged in successfully',
+    'userSuccessfullyLoggedOut'      => 'Logged out successfully',
 ];
